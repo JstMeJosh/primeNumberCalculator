@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prime Number Checker</title>
+    <title>Prime Number Calculator & Checker | Educational Tool</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body class="bg-blue-900 text-white min-h-screen flex items-center justify-center">
+  <body class="bg-blue-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
 
     <div class="bg-white text-gray-800 rounded-xl shadow-lg p-6 w-full max-w-md">
       <h2 class="text-2xl font-bold text-center text-blue-700 mb-4">Prime Number Checker</h2>
@@ -20,25 +20,21 @@
       />
 
       <!-- Number Buttons -->
-    <div class="grid grid-cols-3 gap-3 mb-4">
-    <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="7">7</button>
-    <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="8">8</button>
-    <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="9">9</button>
-      
-    <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="4">4</button>
-    <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="5">5</button>
-    <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="6">6</button>
+      <div class="grid grid-cols-3 gap-3 mb-4">
+        <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="7">7</button>
+        <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="8">8</button>
+        <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="9">9</button>
+        <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="4">4</button>
+        <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="5">5</button>
+        <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="6">6</button>
+        <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="1">1</button>
+        <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="2">2</button>
+        <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="3">3</button>
+        <div></div>
+        <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="0">0</button>
+        <div></div>
+      </div>
 
-    <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="1">1</button>
-    <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="2">2</button>
-    <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="3">3</button>
-
-    <div class="py-2"></div> 
-
-    <button class="num-btn bg-blue-100 text-blue-800 font-semibold py-2 rounded hover:bg-blue-200 transition" data-value="0">0</button>
-    
-    <div class="py-2"></div> 
-</div>
       <!-- Action Buttons -->
       <div class="grid grid-cols-2 gap-3 mb-6">
         <button id="clearBtn" class="bg-red-100 text-red-700 font-semibold py-2 rounded hover:bg-red-200 transition">Clear</button>
@@ -46,15 +42,25 @@
       </div>
 
       <!-- Check Button -->
-      <button
-        id="checkBtn"
-        class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700 transition"
-      >
-        Check
-      </button>
+      <button id="checkBtn" class="w-full bg-blue-600 text-white font-bold py-2 rounded hover:bg-blue-700 transition">Check</button>
 
       <!-- Result Display -->
       <div id="result" class="mt-4 text-center text-lg font-medium transition duration-300"></div>
+    </div>
+
+    <!-- Educational Section -->
+    <div class="mt-8 max-w-xl text-center">
+      <h3 class="text-xl font-bold mb-2">📘 What is a Prime Number?</h3>
+      <p class="mb-4">A <strong>prime number</strong> is a whole number greater than 1 that is only divisible by 1 and itself.</p>
+      <h3 class="text-xl font-bold mb-2">🔐 Why Are Prime Numbers Important?</h3>
+      <p class="mb-4">Prime numbers are essential in <strong>cryptography</strong> and <strong>computer security</strong>, especially in encryption algorithms like RSA.</p>
+
+      <!-- Generate Primes Section -->
+      <div class="mt-6">
+        <input id="rangeInput" type="number" placeholder="Generate primes up to..." class="w-full px-4 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4 transition duration-300" />
+        <button id="generateBtn" class="w-full bg-green-600 text-white font-bold py-2 rounded hover:bg-green-700 transition">Generate Primes</button>
+        <div id="primeList" class="mt-4 text-sm text-left whitespace-pre-wrap"></div>
+      </div>
     </div>
 
     <!-- JavaScript -->
@@ -65,6 +71,9 @@
       const clearBtn = document.getElementById("clearBtn");
       const backspaceBtn = document.getElementById("backspaceBtn");
       const result = document.getElementById("result");
+      const rangeInput = document.getElementById("rangeInput");
+      const generateBtn = document.getElementById("generateBtn");
+      const primeList = document.getElementById("primeList");
 
       // Append number to input
       buttons.forEach(button => {
@@ -104,7 +113,7 @@
 
         for (let i = 2; i <= Math.sqrt(num); i++) {
           if (num % i === 0) {
-            result.textContent = `${num} is not a prime number.`;
+            result.textContent = `${num} is not a prime number because it is divisible by ${i}.`;
             result.classList.add("text-red-600", "animate-shake");
             return;
           }
@@ -112,6 +121,33 @@
 
         result.textContent = `${num} is a prime number!`;
         result.classList.add("text-green-600", "animate-bounce");
+      });
+
+      // Generate primes up to N using Sieve of Eratosthenes
+      generateBtn.addEventListener("click", () => {
+        const n = parseInt(rangeInput.value);
+        if (isNaN(n) || n < 2) {
+          primeList.textContent = "Please enter a number greater than 1.";
+          return;
+        }
+
+        const sieve = Array(n + 1).fill(true);
+        sieve[0] = sieve[1] = false;
+
+        for (let i = 2; i * i <= n; i++) {
+          if (sieve[i]) {
+            for (let j = i * i; j <= n; j += i) {
+              sieve[j] = false;
+            }
+          }
+        }
+
+        const primes = [];
+        for (let i = 2; i <= n; i++) {
+          if (sieve[i]) primes.push(i);
+        }
+
+        primeList.textContent = `Prime numbers ≤ ${n}:\n${primes.join(", ")}`;
       });
     </script>
 
