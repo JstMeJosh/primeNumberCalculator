@@ -90,20 +90,20 @@
         }
 
         if (num <= 1) {
-          result.textContent = `${num} is not prime.`;
+          result.textContent = `${num} is not a prime number.`;
           result.classList.add("text-red-600", "animate-shake");
           return;
         }
 
         for (let i = 2; i <= Math.sqrt(num); i++) {
           if (num % i === 0) {
-            result.textContent = `${num} is not prime.`;
+            result.textContent = `${num} is not a prime number.`;
             result.classList.add("text-red-600", "animate-shake");
             return;
           }
         }
 
-        result.textContent = `${num} is prime!`;
+        result.textContent = `${num} is a prime number!`;
         result.classList.add("text-green-600", "animate-bounce");
       });
     </script>
