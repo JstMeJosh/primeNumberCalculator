@@ -201,7 +201,8 @@
           if (sieve[i]) primes.push(i);
         }
 
-        primeList.textContent = `Prime numbers ≤ ${n}:\n${primes.join(", ")}`;
+        primeList.textContent = `There are ${primes.length} prime numbers ≤ ${n}:\n${primes.join(", ")}`;
+
       });
   document.getElementById("currentYear").textContent = new Date().getFullYear();
     </script>
