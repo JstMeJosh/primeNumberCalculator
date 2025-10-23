@@ -97,6 +97,17 @@
     📱 Chat with Me on WhatsApp
   </a>
 </div>
+      <!-- footer -->
+<footer class="mt-12 text-center text-gray-300 text-sm w-full max-w-xl">
+      <p class="mb-2">&copy; <span id="currentYear"></span> Prime Number Checker | Built by Joshua</p>
+      <p>
+        <a href="https://github.com/JstMeJosh/primeNumberCalculator" target="_blank" class="underline hover:text-white transition">View Source Code on GitHub</a>
+        <!-- |<a href="YOUR_PORTFOLIO_LINK" target="_blank" class="underline hover:text-white transition">More Projects</a> -->
+      </p>
+    </footer>
+
+    </div>
+
 
     </div>
 
@@ -186,6 +197,7 @@
 
         primeList.textContent = `Prime numbers ≤ ${n}:\n${primes.join(", ")}`;
       });
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
     </script>
 
     <!-- Tailwind Animations -->
